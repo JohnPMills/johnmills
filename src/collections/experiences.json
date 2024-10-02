@@ -15,9 +15,16 @@
 	},
 	{
 		"dates": "September 2013 · July 2023 ",
-		"role": "University Lecturer",
+		"role": "Lecturer and Senior Lecturer",
 		"company": "Aberystwyth University, Anglia Ruskin University, Buckinghamshire New University, University of Chichester and the University of Essex.",
-		"description": "Whilst completing my doctorate, I undertook various Associate and casual lecturing roles before being appointed as a Senior Lecturer at the University of Chichester. After two years there, I was offered a role back in the town where I was born at the University of Essex.",
+		"description": "Whilst completing my doctorate, I undertook various Associate and casual lecturing roles before being appointed as a Senior Lecturer at the University of Chichester. After two years there, I was offered a role back in Colchester (the town where I was born) at the University of Essex, where I stayed for just over six years.",
+		"logo": "/assets/images/experiences/wulian.ico"
+	}
+	{
+		"dates": "September 2023 · Onwards ",
+		"role": "Director, Fellow, and Advisor",
+		"company": "Play Aid, Ulster University, and Erasmus University Rotterdam",
+		"description": "I am now in the fourth phase of my career and am work to support the above organisations with leadership, research, and research to support organisational and culture change.",
 		"logo": "/assets/images/experiences/wulian.ico"
 	}
 ]
