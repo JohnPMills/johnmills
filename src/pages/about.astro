@@ -12,7 +12,7 @@ import Layout from "../layouts/main.astro";
       description="Hello 👋 I'm Psychologist and Open Science Advisor based between Rotterdam and London. I'm passionate about creating positive change and improving how science is conducted and shared."
     />
 
-    <img src="/assets/images/about.jpg" class="relative z-30 w-full my-10 rounded-xl" />
+    <img src="/assets/images/johnpmills.webp" class="relative z-30 w-full my-10 rounded-xl" />
 
     <h2 class="mb-2 text-2xl font-bold dark:text-neutral-200">Short Bio</h2>
     <p
@@ -54,6 +54,14 @@ import Layout from "../layouts/main.astro";
                   />
                 </div>
               ) : (
+                <AboutExperience
+                  dates={experience.dates}
+                  role={experience.role}
+                  company={experience.company}
+                  description={experience.description}
+                  logo={experience.logo}
+                />
+                ) : (
                 <AboutExperience
                   dates={experience.dates}
                   role={experience.role}
