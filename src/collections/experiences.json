@@ -4,27 +4,27 @@
 		"role": "Sports Coach and Teacher",
 		"company": "Ipswich Town, Colchester United, Major league Soccer and many more",
 		"description": "Designing and leading sessions for primarily academy and youth level footballers.",
-		"logo": "/assets/images/experiences/fta.ico"
+		"logo": "/assets/images/experiences/coach.ico"
 	},
 	{
 		"dates": "September 2008 · June 2015",
 		"role": "BSc and PhD in Psychology",
 		"company": "University of Suffolk and University of Birmingham, respectively",
 		"description": "I went back to school in 2008 to complete an undergraduate in Psychology and Childhood Development. On completion, I was offered a PhD in Sport and Performance Psychology.",
-		"logo": "/assets/images/experiences/yoho.ico"
+		"logo": "/assets/images/experiences/academic.ico"
 	},
 	{
 		"dates": "September 2013 · July 2023 ",
 		"role": "Lecturer and Senior Lecturer",
 		"company": "Aberystwyth University, Anglia Ruskin University, Buckinghamshire New University, University of Chichester and the University of Essex.",
 		"description": "Whilst completing my doctorate, I undertook various Associate and casual lecturing roles before being appointed as a Senior Lecturer at the University of Chichester. After two years there, I was offered a role back in Colchester (the town where I was born) at the University of Essex, where I stayed for just over six years.",
-		"logo": "/assets/images/experiences/wulian.ico"
+		"logo": "/assets/images/experiences/teach.ico"
 	},
 	{
-		"dates": "September 2023 ·  ",
+		"dates": "September 2020 · September 2025 ",
 		"role": "Director, Fellow, and Advisor",
 		"company": "Play Aid, Ulster University, and Erasmus University Rotterdam",
 		"description": "I am now in the fourth phase of my career and am work to support the above organisations with leadership, research, and research to support organisational and culture change.",
-		"logo": "/assets/images/experiences/wulian.ico"
+		"logo": "/assets/images/experiences/professional.ico"
 	}
 ]
