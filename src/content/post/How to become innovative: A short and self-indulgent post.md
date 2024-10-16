@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/post.astro
-title: How to become innovative: A short and self-indulgent post
+title: How to become innovative- A short and self-indulgent post
 description:  When I was a young child, my father was a butcher. He completed an apprenticeship six plus years before I was born and worked in the role for about ten years. Times changed and butcher shops struggled so he changed jobs.
 dateFormatted: Oct 16th, 2024
 ---
