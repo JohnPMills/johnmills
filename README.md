@@ -1,1 +1,1 @@
-The personal website and blog of Dr John P. Mills
+The personal website of Dr John P. Mills
