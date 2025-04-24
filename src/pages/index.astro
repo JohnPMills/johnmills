@@ -3,7 +3,42 @@ import Button from "../components/button.astro";
 import Projects from "../components/home/projects.astro";
 import Separator from "../components/home/separator.astro";
 import Writings from "../components/home/writings.astro";
+import Thoughts from "../components/home/thoughts.astro";
 import Layout from "../layouts/main.astro";
+
+// Featured essays – swap these out whenever you like
+const featured = [
+  {
+    title: "Living with a Wild God",
+    subtitle: "Meaning‑making & uncertainty",
+    cover: "/assets/covers/wild-god.webp",
+    link: "/writing/living-with-a-wild-god",
+  },
+  {
+    title: "Blood Rites",
+    subtitle: "Origins & history of conflict",
+    cover: "/assets/covers/blood-rites.webp",
+    link: "/writing/blood-rites",
+  },
+  {
+    title: "Fear of Falling",
+    subtitle: "The anxious middle class",
+    cover: "/assets/covers/fear-of-falling.webp",
+    link: "/writing/fear-of-falling",
+  },
+  {
+    title: "Kipper’s Game",
+    subtitle: "A cautionary tech fable",
+    cover: "/assets/covers/kippers-game.webp",
+    link: "/writing/kippers-game",
+  },
+  {
+    title: "Natural Causes",
+    subtitle: "Well‑being myths debunked",
+    cover: "/assets/covers/natural-causes.webp",
+    link: "/writing/natural-causes",
+  },
+];
 ---
 
 <Layout 
@@ -21,13 +56,13 @@ import Layout from "../layouts/main.astro";
           Hello, I'm John.
         </h1>
         <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-          I'm a Chartered Psychologist specialising in Leadership, Open Science, and Behaviour Change Living between Rotterdam and London.<br>
+          I'm a Chartered Psychologist specialising in Leadership, Open Science, and Behaviour Change Living between Rotterdam and London.<br />
         </p>
         <p class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">
-          Drawing on my expertise in transformational leadership, social psychology, and open science, I help organisations and research institutions foster open, ethical, and high-performing workplace cultures through thought leadership, research, training, and evidence-based strategies. 
+          Drawing on my expertise in transformational leadership, social psychology, and open science, I help organisations and research institutions foster open, ethical, and high-performing workplace cultures through thought leadership, research, training, and evidence-based strategies.
         </p>
-      
-        <Button text="Follow me on LinkedIn" link="https://linkedin.com/in/drjpmills"/>
+
+        <Button text="Follow me on LinkedIn" link="https://linkedin.com/in/drjpmills" />
       </div>
       <div
         class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0"
@@ -55,12 +90,15 @@ import Layout from "../layouts/main.astro";
           </div>
           <div
             class="absolute bottom-0 right-0 z-20 w-full h-full lg:h-[420px] translate-x-0 -translate-y-px border border-dashed rounded-2xl bg-gradient-to-r dark:from-neutral-950 dark:via-black dark:to-neutral-950 from-white via-neutral-50 to-white border-neutral-300 dark:border-neutral-700"
-          >
-          </div>
+          ></div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- New featured thoughts strip -->
+  <Separator text="Recent Essays & Re‑issues" />
+  <Thoughts items={featured} />
 
   <Separator text="Some of my thoughts" />
   <Writings />
