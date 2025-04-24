@@ -1,17 +1,17 @@
 ---
-// components/home/thoughts.astro
+import Button from "../button.astro";
 const { items = [] } = Astro.props;
 ---
 
 <div class="mt-14 flex flex-wrap justify-center gap-8">
   {items.map(thought => (
     <article class="w-40 sm:w-48 lg:w-56 text-center">
-      <a href={thought.link} class="group">
+      <a href={thought.link} class="group" target="blank" rel="noopener noreferrer">
         <img src={thought.cover} alt={thought.title}
              class="aspect-[3/4] w-full rounded-xl shadow transition group-hover:scale-[1.03] dark:shadow-neutral-700"/>
         <h3 class="mt-4 text-base font-semibold text-neutral-900 dark:text-neutral-100">{thought.title}</h3>
         <p class="text-sm text-neutral-500 dark:text-neutral-400">{thought.subtitle}</p>
-        <Button text="Read" link={thought.link} small />
+        <Button text="Read" link={thought.link} small newTab />
       </a>
     </article>
   ))}
