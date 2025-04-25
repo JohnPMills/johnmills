@@ -1,10 +1,11 @@
 ---
+import { onMount } from 'astro';
+
 const { testimonials = [] } = Astro.props;
----
 
-<script>
-  let container;
+let container;
 
+onMount(() => {
   function autoScroll() {
     const speed = 0.5; // pixels per frame
     function step() {
@@ -19,12 +20,13 @@ const { testimonials = [] } = Astro.props;
     step();
   }
 
-  window.addEventListener('DOMContentLoaded', autoScroll);
-</script>
+  autoScroll();
+});
+---
 
-<div class="w-full overflow-x-auto py-8 px-4" bind:this={container}>
+<div class="w-full overflow-x-auto py-8 px-4" ref={el => container = el}>
   <div class="flex gap-6 min-w-max">
-    {testimonials.map((t) => (
+    {(testimonials || []).map((t) => (
       <div class="w-[280px] flex-shrink-0 p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left whitespace-normal">
         <p class="text-sm text-neutral-700 dark:text-neutral-300 italic break-words">“{t.quote}”</p>
         <p class="mt-4 font-semibold text-neutral-900 dark:text-white">— {t.name}</p>
