@@ -105,21 +105,48 @@ const featured = [
   <Separator text="Insights & Perspectives" />
   <Writings />
 
-  <Separator text="Peer Endorsements" />
-  <div class="py-12 bg-neutral-50 dark:bg-neutral-900/30"> <!-- Added subtle background container -->
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"> <!-- Responsive grid layout -->
-        {quotes.map((t) => (
-          <div class="p-6 bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-neutral-100 dark:border-neutral-700 hover:shadow-md transition-shadow"> <!-- Refined card styling -->
-            <p class="text-sm text-neutral-700 dark:text-neutral-300 italic mb-4">"{t.quote}"</p>
-            <div class="border-t border-neutral-100 dark:border-neutral-700 pt-4">
-              <p class="font-semibold text-neutral-900 dark:text-white">{t.name}</p>
-              <p class="text-xs text-neutral-500">{t.title}</p>
-            </div>
+<Separator text="Peer Endorsements" />
+<div class="relative pb-20 mx-auto bg-white dark:bg-neutral-950 md:rounded-b-md">
+  <!-- Graph pattern (matches your site's aesthetic) -->
+  <div class="absolute bottom-0 right-0 w-full h-full overflow-hidden md:rounded-b-md">
+    <svg 
+      class="absolute right-0 bottom-0 w-[80%] h-[80%] text-neutral-300 dark:text-neutral-800" 
+      viewBox="0 0 100 100" 
+      preserveAspectRatio="none"
+    >
+      <!-- Horizontal lines -->
+      <line x1="0" y1="20" x2="100" y2="20" stroke="currentColor" stroke-width="0.5" />
+      <line x1="0" y1="40" x2="100" y2="40" stroke="currentColor" stroke-width="0.5" />
+      <line x1="0" y1="60" x2="100" y2="60" stroke="currentColor" stroke-width="0.5" />
+      <line x1="0" y1="80" x2="100" y2="80" stroke="currentColor" stroke-width="0.5" />
+      <!-- Vertical lines -->
+      <line x1="20" y1="0" x2="20" y2="100" stroke="currentColor" stroke-width="0.5" />
+      <line x1="40" y1="0" x2="40" y2="100" stroke="currentColor" stroke-width="0.5" />
+      <line x1="60" y1="0" x2="60" y2="100" stroke="currentColor" stroke-width="0.5" />
+      <line x1="80" y1="0" x2="80" y2="100" stroke="currentColor" stroke-width="0.5" />
+      <!-- Subtle diagonal -->
+      <line x1="0" y1="100" x2="100" y2="0" stroke="currentColor" stroke-width="0.3" stroke-dasharray="3,3" />
+    </svg>
+  </div>
+
+  <!-- Side borders (matching your layout) -->
+  <div class="absolute top-0 left-0 hidden w-px h-full mt-1 -translate-x-px md:block bg-gradient-to-b from-transparent to-white dark:to-neutral-950"></div>
+  <div class="absolute top-0 right-0 hidden w-px h-full mt-1 translate-x-px md:block bg-gradient-to-b from-transparent to-white dark:to-neutral-950"></div>
+
+  <!-- Testimonials content -->
+  <div class="relative max-w-4xl px-5 mx-auto md:px-7 lg:px-0">
+    <div class="grid gap-6 md:grid-cols-2">
+      {quotes.map((t) => (
+        <div class="p-6 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg shadow-sm hover:shadow-md transition-all">
+          <p class="text-sm italic text-neutral-700 dark:text-neutral-300">"{t.quote}"</p>
+          <div class="pt-4 mt-4 border-t border-neutral-100 dark:border-neutral-800">
+            <p class="font-semibold text-neutral-900 dark:text-white">{t.name}</p>
+            <p class="text-xs text-neutral-500">{t.title}</p>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   </div>
+</div>
 
 </Layout>
