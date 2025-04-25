@@ -2,11 +2,34 @@
 const { testimonials = [] } = Astro.props;
 ---
 
-<div class="overflow-x-auto whitespace-nowrap py-8 px-4 -mx-4">
-  <div class="inline-flex gap-6">
-    {testimonials.map((t) => (
-      <div class="min-w-[300px] max-w-sm p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left">
-        <p class="text-sm text-neutral-700 dark:text-neutral-300 italic">“{t.quote}”</p>
+<style>
+  .testimonial-scroll {
+    animation: scroll 30s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .testimonial-container:hover .testimonial-scroll {
+    animation-play-state: paused;
+  }
+</style>
+
+<div class="testimonial-container overflow-hidden py-8 px-4 -mx-4">
+  <div class="testimonial-scroll inline-flex gap-6">
+    {/* Duplicate testimonials for seamless looping */}
+    {[...testimonials, ...testimonials].map((t, i) => (
+      <div 
+        class="min-w-[300px] max-w-sm p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left flex-shrink-0"
+        key={`testimonial-${i}`}
+      >
+        <p class="text-sm text-neutral-700 dark:text-neutral-300 italic">"{t.quote}"</p>
         <p class="mt-4 font-semibold text-neutral-900 dark:text-white">— {t.name}</p>
         {t.title && <p class="text-xs text-neutral-500">{t.title}</p>}
       </div>
