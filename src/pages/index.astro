@@ -102,4 +102,25 @@ const featured = [
 
   <Separator text="Some of my thoughts" />
   <Writings />
+
+import Testimonials from "../components/home/testimonials.astro";
+
+const quotes = [
+  {
+    quote: "Dr. Mills has been an open science pioneer. He is an academic with an entrepreneurial mindset capable of having a vision and turning that vision into start-up-like initiatives.",
+    name: "Prof. Matthieu Boisgontier",
+    title: "University of Ottawa, Canada"
+  },
+  {
+    quote: "A rare blend of rigor, empathy, and vision. Outstanding collaborator.",
+    name: "Prof. Mark Jensen",
+    title: "Open Science Lead, Erasmus MC"
+  },
+  // Add more...
+];
+
+...
+
+<Separator text="What People Are Saying" />
+<Testimonials testimonials={quotes} />
 </Layout>
