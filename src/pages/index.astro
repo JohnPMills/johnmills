@@ -5,6 +5,23 @@ import Separator from "../components/home/separator.astro";
 import Writings from "../components/home/writings.astro";
 import Thoughts from "../components/home/thoughts.astro";
 import Layout from "../layouts/main.astro";
+import Testimonials from "../components/home/testimonials.astro";
+
+const quotes = [
+  {
+    quote: "Dr. Mills has been an open science pioneer. He is an academic with an entrepreneurial mindset capable of having a vision and turning that vision into start-up-like initiatives.",
+    name: "Prof. Matthieu Boisgontier",
+    title: "University of Ottawa, Canada"
+  },
+  {
+    quote: "A rare blend of rigor, empathy, and vision. Outstanding collaborator.",
+    name: "Prof. Mark Jensen",
+    title: "Open Science Lead, Erasmus MC"
+  },
+  // Add more...
+];
+
+...
 
 // Featured essays – swap these out whenever you like
 const featured = [
@@ -103,24 +120,6 @@ const featured = [
   <Separator text="Some of my thoughts" />
   <Writings />
 
-import Testimonials from "../components/home/testimonials.astro";
-
-const quotes = [
-  {
-    quote: "Dr. Mills has been an open science pioneer. He is an academic with an entrepreneurial mindset capable of having a vision and turning that vision into start-up-like initiatives.",
-    name: "Prof. Matthieu Boisgontier",
-    title: "University of Ottawa, Canada"
-  },
-  {
-    quote: "A rare blend of rigor, empathy, and vision. Outstanding collaborator.",
-    name: "Prof. Mark Jensen",
-    title: "Open Science Lead, Erasmus MC"
-  },
-  // Add more...
-];
-
-...
-
-<Separator text="What People Are Saying" />
+<Separator text="Testimonials" />
 <Testimonials testimonials={quotes} />
 </Layout>
