@@ -3,8 +3,9 @@ const { testimonials = [] } = Astro.props;
 ---
 
 <style>
+  /* Existing scroll animation */
   .testimonial-scroll {
-    animation: scroll 60s linear infinite; /* Slowed down from 30s to 60s */
+    animation: scroll 60s linear infinite;
   }
   
   @keyframes scroll {
@@ -19,14 +20,47 @@ const { testimonials = [] } = Astro.props;
   .testimonial-container:hover .testimonial-scroll {
     animation-play-state: paused;
   }
+
+  /* NEW FADE EFFECT STYLES */
+  .testimonial-container {
+    position: relative; /* Required for the pseudo-elements */
+  }
+  
+  .testimonial-container::before,
+  .testimonial-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Width of the fade effect */
+    z-index: 10; /* Ensure it appears above the scrolling content */
+    pointer-events: none; /* Allows clicking through the fade */
+  }
+  
+  /* Left fade */
+  .testimonial-container::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  }
+  
+  /* Right fade */
+  .testimonial-container::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  }
+  
+  /* Dark mode support */
+  .dark .testimonial-container::before,
+  .dark .testimonial-container::after {
+    background: linear-gradient(90deg, rgba(15,23,42,1) 0%, rgba(15,23,42,0) 100%);
+  }
 </style>
 
 <div class="testimonial-container overflow-hidden py-8">
-  <div class="max-w-7xl mx-auto px-6"> <!-- Added container with max-width and horizontal padding -->
-    <div class="testimonial-scroll inline-flex gap-6 pl-[100%]"> <!-- Added left padding to create initial space -->
-      {/* Duplicate testimonials for seamless looping */}
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="testimonial-scroll inline-flex gap-6 pl-[100%]">
       {[...testimonials, ...testimonials].map((t) => (
-        <div class="min-w-[300px] max-w-sm p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left flex-shrink-0 mx-2"> <!-- Added horizontal margin -->
+        <div class="min-w-[300px] max-w-sm p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left flex-shrink-0 mx-2">
           <p class="text-sm text-neutral-700 dark:text-neutral-300 italic">"{t.quote}"</p>
           <p class="mt-4 font-semibold text-neutral-900 dark:text-white">— {t.name}</p>
           {t.title && <p class="text-xs text-neutral-500">{t.title}</p>}
