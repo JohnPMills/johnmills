@@ -1,13 +1,12 @@
-<!-- components/home/testimonials.astro -->
 ---
 const { testimonials = [] } = Astro.props;
 ---
 
-<div class="overflow-x-auto whitespace-nowrap py-8 px-4 -mx-4">
+<div class="overflow-x-auto py-8 px-4 -mx-4">
   <div class="inline-flex gap-6">
     {testimonials.map((t) => (
-      <div class="min-w-[300px] max-w-sm p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left">
-        <p class="text-sm text-neutral-700 dark:text-neutral-300 italic">“{t.quote}”</p>
+      <div class="min-w-[280px] max-w-xs shrink-0 p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left whitespace-normal">
+        <p class="text-sm text-neutral-700 dark:text-neutral-300 italic break-words">“{t.quote}”</p>
         <p class="mt-4 font-semibold text-neutral-900 dark:text-white">— {t.name}</p>
         {t.title && <p class="text-xs text-neutral-500">{t.title}</p>}
       </div>
