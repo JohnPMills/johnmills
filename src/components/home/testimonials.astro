@@ -3,69 +3,52 @@ const { testimonials = [] } = Astro.props;
 ---
 
 <style>
-  /* Existing scroll animation */
-  .testimonial-scroll {
-    animation: scroll 60s linear infinite;
-  }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  
-  .testimonial-container:hover .testimonial-scroll {
-    animation-play-state: paused;
+  .testimonial-slider {
+    position: relative;
+    height: 300px; /* Adjust based on your card height */
+    overflow: hidden;
   }
 
-  /* NEW FADE EFFECT STYLES */
-  .testimonial-container {
-    position: relative; /* Required for the pseudo-elements */
-  }
-  
-  .testimonial-container::before,
-  .testimonial-container::after {
-    content: '';
+  .testimonial-card {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px; /* Width of the fade effect */
-    z-index: 10; /* Ensure it appears above the scrolling content */
-    pointer-events: none; /* Allows clicking through the fade */
+    width: 100%;
+    max-width: 600px; /* Adjust card width */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
   }
-  
-  /* Left fade */
-  .testimonial-container::before {
-    left: 0;
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-  }
-  
-  /* Right fade */
-  .testimonial-container::after {
-    right: 0;
-    background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-  }
-  
-  /* Dark mode support */
-  .dark .testimonial-container::before,
-  .dark .testimonial-container::after {
-    background: linear-gradient(90deg, rgba(15,23,42,1) 0%, rgba(15,23,42,0) 100%);
+
+  .testimonial-card.active {
+    opacity: 1;
   }
 </style>
 
-<div class="testimonial-container overflow-hidden py-8">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="testimonial-scroll inline-flex gap-6 pl-[100%]">
-      {[...testimonials, ...testimonials].map((t) => (
-        <div class="min-w-[300px] max-w-sm p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left flex-shrink-0 mx-2">
-          <p class="text-sm text-neutral-700 dark:text-neutral-300 italic">"{t.quote}"</p>
-          <p class="mt-4 font-semibold text-neutral-900 dark:text-white">— {t.name}</p>
-          {t.title && <p class="text-xs text-neutral-500">{t.title}</p>}
-        </div>
-      ))}
+<div class="testimonial-slider">
+  {testimonials.map((t, index) => (
+    <div class={`testimonial-card ${index === 0 ? 'active' : ''}`}>
+      <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left mx-auto max-w-sm">
+        <p class="text-sm text-neutral-700 dark:text-neutral-300 italic">"{t.quote}"</p>
+        <p class="mt-4 font-semibold text-neutral-900 dark:text-white">— {t.name}</p>
+        {t.title && <p class="text-xs text-neutral-500">{t.title}</p>}
+      </div>
     </div>
-  </div>
+  ))}
 </div>
+
+<script>
+  // Auto-rotate testimonials
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.testimonial-card');
+    let currentIndex = 0;
+    
+    function showNextTestimonial() {
+      cards[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % cards.length;
+      cards[currentIndex].classList.add('active');
+    }
+    
+    // Change every 5 seconds
+    setInterval(showNextTestimonial, 5000);
+  });
+</script>
