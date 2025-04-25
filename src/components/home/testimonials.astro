@@ -5,18 +5,30 @@ const { testimonials = [] } = Astro.props;
 <style>
   .testimonial-slider {
     position: relative;
-    height: 300px; /* Adjust based on your card height */
+    height: 300px; /* Adjust based on your tallest card */
     overflow: hidden;
   }
 
   .testimonial-card {
     position: absolute;
     width: 100%;
-    max-width: 1000px; /* Adjust card width */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 1s ease-in-out;
+  }
+
+  /* Mobile-first sizing (original size) */
+  .testimonial-card-inner {
+    @apply p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left mx-auto max-w-sm;
+  }
+
+  /* Desktop sizing (50% wider) */
+  @media (min-width: 768px) {
+    .testimonial-card-inner {
+      @apply max-w-md; /* Makes it ~50% wider than max-w-sm */
+      /* Alternatively use exact width: width: 150%; */
+    }
   }
 
   .testimonial-card.active {
@@ -27,7 +39,7 @@ const { testimonials = [] } = Astro.props;
 <div class="testimonial-slider">
   {testimonials.map((t, index) => (
     <div class={`testimonial-card ${index === 0 ? 'active' : ''}`}>
-      <div class="p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left mx-auto max-w-sm">
+      <div class="testimonial-card-inner">
         <p class="text-sm text-neutral-700 dark:text-neutral-300 italic">"{t.quote}"</p>
         <p class="mt-4 font-semibold text-neutral-900 dark:text-white">— {t.name}</p>
         {t.title && <p class="text-xs text-neutral-500">{t.title}</p>}
@@ -37,7 +49,6 @@ const { testimonials = [] } = Astro.props;
 </div>
 
 <script>
-  // Auto-rotate testimonials
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.testimonial-card');
     let currentIndex = 0;
@@ -48,7 +59,6 @@ const { testimonials = [] } = Astro.props;
       cards[currentIndex].classList.add('active');
     }
     
-    // Change every 5 seconds
     setInterval(showNextTestimonial, 5000);
   });
 </script>
