@@ -91,7 +91,11 @@ const featured = [
 
         <Button text="Connect on LinkedIn" link="https://linkedin.com/in/drjpmills" />
       </div>
-      <div
+
+<Separator text="Testimonials" />
+<Testimonials testimonials={quotes} />
+
+  <div
         class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0"
       >
         <div class="relative z-50 w-full">
@@ -130,6 +134,4 @@ const featured = [
   <Separator text="Some of my thoughts" />
   <Writings />
 
-<Separator text="Testimonials" />
-<Testimonials testimonials={quotes} />
 </Layout>
