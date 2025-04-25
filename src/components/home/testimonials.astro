@@ -2,10 +2,30 @@
 const { testimonials = [] } = Astro.props;
 ---
 
-<div class="overflow-x-auto py-8 px-4 -mx-4">
-  <div class="inline-flex gap-6">
+<script>
+  let container;
+
+  function autoScroll() {
+    const speed = 0.5; // pixels per frame
+    function step() {
+      if (container) {
+        container.scrollLeft += speed;
+        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+          container.scrollLeft = 0;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+    step();
+  }
+
+  window.addEventListener('DOMContentLoaded', autoScroll);
+</script>
+
+<div class="w-full overflow-x-auto py-8 px-4" bind:this={container}>
+  <div class="flex gap-6 min-w-max">
     {testimonials.map((t) => (
-      <div class="min-w-[280px] max-w-xs shrink-0 p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left whitespace-normal">
+      <div class="w-[280px] flex-shrink-0 p-6 bg-white dark:bg-neutral-900 rounded-xl shadow text-left whitespace-normal">
         <p class="text-sm text-neutral-700 dark:text-neutral-300 italic break-words">“{t.quote}”</p>
         <p class="mt-4 font-semibold text-neutral-900 dark:text-white">— {t.name}</p>
         {t.title && <p class="text-xs text-neutral-500">{t.title}</p>}
