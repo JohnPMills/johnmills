@@ -6,21 +6,21 @@
 		"url": "https://sportrxiv.org"
 	},
 	{
-		"name": "SportRxiv",
-		"description": "SportRxiv is the World's First Open Access Subject Repository for Sport, Exercise and Health Research. I founded the preprint repository in 2016 after reaching out to Prof Brian Nosek at the Centre for Open Science for his advice. Nearly ten years and hundreds of preprints later, the repository is still going strong.",
-		"image": "/assets/images/sportrxiv.png",
-		"url": "https://sportrxiv.org"
+		"name": "STORK",
+		"description": "The Society for Transparency, Openness, and Replication in Kindesiology was founded in 2019. I created the society around SportRxiv with a view of making the repository community owned and operated, which it remains today.",
+		"image": "/assets/images/stork.png",
+		"url": "https://storkinesiology.org"
 	},
 	{
-		"name": "SportRxiv",
-		"description": "SportRxiv is the World's First Open Access Subject Repository for Sport, Exercise and Health Research. I founded the preprint repository in 2016 after reaching out to Prof Brian Nosek at the Centre for Open Science for his advice. Nearly ten years and hundreds of preprints later, the repository is still going strong.",
-		"image": "/assets/images/sportrxiv.png",
-		"url": "https://sportrxiv.org"
+		"name": "Play Aid",
+		"description": "Play Aid was founded in 2020 at the start of the Covid-19 pandemic and is a mental health non-profit that uses the power of play to connect with young people. Funded by Movember since 2021, the organisation has grown into running operations in the UK, Ireland and Australia.",
+		"image": "/assets/images/playaid.jpg",
+		"url": "https://playaid.net"
 	},  
 	{
-		"name": "SportRxiv",
-		"description": "SportRxiv is the World's First Open Access Subject Repository for Sport, Exercise and Health Research. I founded the preprint repository in 2016 after reaching out to Prof Brian Nosek at the Centre for Open Science for his advice. Nearly ten years and hundreds of preprints later, the repository is still going strong.",
-		"image": "/assets/images/sportrxiv.png",
-		"url": "https://sportrxiv.org"
+		"name": "Erasmus University Rotterdam",
+		"description": "Since 2023, I have held the role of Open Science Advisor at Erasmus University Rotterdam. During this time, I have overseen the University's Open Science Support Strategy and embedded Open Science within the recognition and reward cycle processes across the University.",
+		"image": "/assets/images/eur.jpg",
+		"url": "https://eur.nl"
 	}
 ]
