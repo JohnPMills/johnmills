@@ -1,30 +1,37 @@
 [
 	{
-		"dates": "August 2001 · September 2010",
+		"dates": "2001–2010: Early Career in Coaching",
 		"role": "Sports Coach and Teacher",
 		"company": "Ipswich Town, Colchester United, Major league Soccer and many more",
-		"description": "At just 15 years of age, I managed my first football team in the Colchester and District U18 league. From there, I got employed part-time by Ipswich Town's community project breifly, before taking a full-time role at Colchester United. I worked for various clubs in their academies throughout this decade and hold a range of coaching qualifications.",
+		"description": "Worked as a football coach and sports teacher.",
 		"logo": "/assets/images/experiences/coach.ico"
 	},
 	{
-		"dates": "September 2008 · December 2015",
+		"dates": "2008–2015: Academic Training",
 		"role": "BSc and PhD in Psychology",
 		"company": "University of Suffolk and University of Birmingham, respectively",
-		"description": "I went back to school in 2008 to complete an undergraduate in Psychology and Childhood Development. On completion, I was offered a PhD in Sport and Performance Psychology. I graduated from the University of Birmingham in 2015.",
+		"description": "Completed a BSc and PhD in Psychology. Research focused on leadership and social cognition.",
 		"logo": "/assets/images/experiences/academic.ico"
 	},
 	{
-		"dates": "September 2011 · July 2023 ",
+		"dates": "2011–2023: Academic Teaching & Research",
 		"role": "Teaching Fellow, Lecturer, and Senior Lecturer",
 		"company": "Aberystwyth University, Anglia Ruskin University, Buckinghamshire New University, University of Chichester and the University of Essex.",
-		"description": "Whilst completing my doctorate, I undertook various Associate and casual lecturing roles before being appointed as a Senior Lecturer at the University of Chichester. After two years there, I was offered a role back in Colchester (the town where I was born) at the University of Essex, where I stayed for just over six years.",
+		"description": "Held lecturer and senior lecturer positions at several UK universities. Published over 40 outputs in sport and performance psychology.",
 		"logo": "/assets/images/experiences/teach.ico"
 	},
 	{
-		"dates": "September 2020 · September 2025",
+		"dates": "2017–Present: Open Science & Research Culture",
 		"role": "Director, Fellow, and Advisor",
+		"company": "SportRxiv, STORK, and Erasmus University Rotterdam",
+		"description": "Co-founded SportRxiv (preprint Repository). Executive Chair of STORK. Strategic Open Science Advisor at Erasmus University Rotterdam.",
+		"logo": "/assets/images/experiences/padlock.ico"
+	},
+  {
+		"dates": "2020–Present: Play Aid & Mental Health Work",
+		"role": "Play Aid, Movember",
 		"company": "Play Aid, Ulster University, and Erasmus University Rotterdam",
-		"description": "I am now in the fourth phase of my career and work to support the above organisations with strategic leadership, training, and research to support organisational and culture change.",
+		"description": "Founded Play Aid CIC. Developed various Movember-supported training programmes for online gamers.",
 		"logo": "/assets/images/experiences/professional.ico"
 	}
 ]
