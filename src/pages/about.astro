@@ -3,6 +3,25 @@ import experiences from "../collections/experiences.json";
 import AboutExperience from "../components/about-experience.astro";
 import PageHeading from "../components/page-heading.astro";
 import Layout from "../layouts/main.astro";
+import Testimonials from "../components/home/testimonials.astro";
+
+const quotes = [
+  {
+    quote: "Dr Mills is an academic with an entrepreneurial mindset capable of having a vision and turning that vision into start-up-like initiatives.",
+    name: "Prof. Matthieu Boisgontier",
+    title: "University of Ottawa, Canada"
+  },
+{
+    quote: "John’s leadership treads a line that navigates and allows for individual autonomy as well as a sense of group.",
+    name: "Dr Mike Rogerson",
+    title: "University of Essex, UK"
+  },
+{
+    quote: "Dr. Mills has made an important contribution to scholarship throughout his research and writing",
+    name: "Prof. Jean Côté",
+    title: "Queen's University, Canada"
+  }
+];
 ---
 
 <Layout title="Leadership, Open Science, and Organisational Culture">
