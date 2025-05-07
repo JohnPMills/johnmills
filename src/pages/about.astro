@@ -100,4 +100,21 @@ John is committed to public engagement and bridging the gap between research and
       > and I'll be sure to get back to you.
     </p>
   </section>
+
+ <Separator text="Peer Endorsements" />
+  <div class="py-12 bg-neutral-50 dark:bg-neutral-900/30"> <!-- Added subtle background container -->
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"> <!-- Responsive grid layout -->
+        {quotes.map((t) => (
+          <div class="p-6 bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-neutral-100 dark:border-neutral-700 hover:shadow-md transition-shadow"> <!-- Refined card styling -->
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 italic mb-4">"{t.quote}"</p>
+            <div class="border-t border-neutral-100 dark:border-neutral-700 pt-4">
+              <p class="font-semibold text-neutral-900 dark:text-white">{t.name}</p>
+              <p class="text-xs text-neutral-500">{t.title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
 </Layout>
