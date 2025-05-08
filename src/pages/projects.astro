@@ -9,23 +9,18 @@ import Layout from "../layouts/main.astro";
   <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
       title="Projects and Organisations"
-      description="Here is a collection of projects and organisations that Dr Mills has founded or been involved in.   />
+      description="Here is a collection of projects and organisations that Dr Mills has founded or been involved in."
+    />
 
-    <div
-      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
-    >
-      {
-        projects.map((project) => {
-          return (
-            <Project
-              name={project.name}
-              description={project.description}
-              image={project.image}
-              url={project.url}
-            />
-          )
-        })
-      }
+    <div class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2">
+      {projects.map((project) => (
+        <Project
+          name={project.name}
+          description={project.description}
+          image={project.image}
+          url={project.url}
+        />
+      ))}
     </div>
   </section>
 </Layout>
