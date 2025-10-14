@@ -2,7 +2,7 @@
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
 import SquareLines from "../components/square-lines.astro";
-const { title, description } = Astro.props; // Make sure to include description
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -11,23 +11,22 @@ const { title, description } = Astro.props; // Make sure to include description
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <meta name="description" content={description || "Default description if none provided"} /> <!-- Add meta description -->
+    <meta name="description" content={description || "Default description if none provided"} />
 
-    <!-- Used to add dark mode right away, adding here prevents any flicker -->
+    <!-- Immediately apply dark mode from localStorage to prevent flicker -->
     <script is:inline>
       if (typeof Storage !== 'undefined') {
-        if (
-          localStorage.getItem('dark_mode') &&
-          localStorage.getItem('dark_mode') == 'true'
-        ) {
-          document.documentElement.classList.add('dark')
+        if (localStorage.getItem('dark_mode') === 'true') {
+          document.documentElement.classList.add('dark');
         }
       }
     </script>
 
-    <!-- 100% privacy-first analytics -->
+    <!-- Analytics -->
     <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
+    <noscript>
+      <img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/>
+    </noscript>
 
     <style>
       .prose img {
@@ -43,6 +42,34 @@ const { title, description } = Astro.props; // Make sure to include description
     <Header />
     <slot />
     <Footer />
+
+    <!-- Main JS -->
+    <script is:inline>
+      // Safe dark toggle listener
+      const toggle = document.getElementById('darkToggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          if (isDark) {
+            document.documentElement.classList.remove('dark');
+            localStorage.removeItem('dark_mode');
+            if (typeof showDay === 'function') showDay(true);
+          } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('dark_mode', 'true');
+            if (typeof showNight === 'function') showNight(true);
+          }
+        });
+      }
+
+      // Optional: ensure toggle works on page load
+      window.addEventListener('DOMContentLoaded', () => {
+        if (localStorage.getItem('dark_mode') === 'true') {
+          document.documentElement.classList.add('dark');
+        }
+      });
+    </script>
+
     <script src="../assets/js/main.js"></script>
     <Fragment set:html={import.meta.env.FOOTER_INJECT} />
   </body>
