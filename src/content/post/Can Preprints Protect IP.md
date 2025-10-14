@@ -35,7 +35,7 @@ The journal has influenced the VoR through editing, typesetting, and arranging p
 
 Some publishers have policies where they won’t publish work that has been preprinted. However, this is very rare and all the large publishers (e.g., Elsevier, Springer, Wiley etc.) permit preprinting – some have done so for multiple decades.  
 
-Where a small, typically society run, publisher does not allow preprinting, the authors will need to decide whether they are willing to submit their work there and transfer copyright. They should be advised against publishing in such journals. This accounted for less than 1% of published manuscripts at the EUR in 2024 (i.e., 10 from 1356 publications).  
+Where a small, typically society run, publisher does not allow preprinting, the authors will need to decide whether they are willing to submit their work there and transfer copyright. They should be advised against publishing in such journals. 
 
 
 Outcome: 
