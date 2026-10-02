@@ -55,81 +55,28 @@ const featured = [
 
 <Layout
   title="Dr. John P. Mills | Leadership, Open Science, and Organisational Culture Expert"
-  description="Dr John P. Mills is a psychologist, researcher, and strategic advisor working across education, sport, and mental health to foster meaningful, sustainable change. His work explores leadership, behaviour, and systems –---
-import Button from "../components/button.astro";
-import Projects from "../components/home/projects.astro";
-import Separator from "../components/home/separator.astro";
-import Writings from "../components/home/writings.astro";
-import Thoughts from "../components/home/thoughts.astro";
-import Layout from "../layouts/main.astro";
-import Testimonials from "../components/home/testimonials.astro";
-
-const quotes = [
-  {
-    quote: "Dr. Mills has been an open science pioneer.",
-    name: "Prof. Matthieu Boisgontier",
-    title: "University of Ottawa, Canada"
-  },
-{
-    quote: "Few people are 'disruptive' in such a positive way.",
-    name: "Dr Zachary Zenko",
-    title: "California State University Bakersfield, USA"
-  },
-{
-    quote: "Without John, it is difficult to imagine that the field would be as well-positioned as it is for advancing open science.",
-    name: "Prof. Brian Nosek",
-    title: "University of Virginia/Center for Open Science, USA"
-  }
-];
-
-const featured = [
-  {
-    title: "Exploring the use of a dance-based exergame to enhance autistic children’s social communication skills in the home and school environments",
-    subtitle: "",
-    cover: "/assets/images/covers/journal-developmental-disabilities.webp",
-    link: "https://www.tandfonline.com/doi/pdf/10.1080/20473869.2023.2212985",
-  },
-  {
-    title: "The effectiveness of mental health literacy interventions in young people: a meta-analysis",
-    subtitle: " ",
-    cover: "/assets/images/covers/mental-health-review-journal.webp",
-    link: "https://www.emerald.com/insight/content/doi/10.1108/mhrj-07-2022-0052/full/html",
-  },
-  {
-    title: "Parent-reported social-communication changes in children diagnosed with autism spectrum disorder during the COVID-19 pandemic in the UK",
-    subtitle: "",
-    cover: "/assets/images/covers/journal-developmental-disabilities.webp",
-    link: "https://www.tandfonline.com/doi/pdf/10.1080/20473869.2021.1936870",
-  },
-  {
-    title: "The impact of training environment on Tokyo Olympic athletes’ wellbeing: a qualitative multiple case study",
-    subtitle: "",
-    cover: "/assets/images/covers/international-journal-of-sport-and-exercise-psychology.webp",
-    link: "http://www.ijsp-online.com/download/54/int.j.sport.psychol.2023.54.348-371.pdf",
-  },
-];
----
-
-<Layout 
-  title="Dr. John P. Mills | Leadership, Open Science, and Organisational Culture Expert" 
-  description="Dr John P. Mills is a psychologist, researcher, and strategic advisor working across education, sport, and mental health to foster meaningful, sustainable change. His work explores leadership, behaviour, and systems – particularly how to build cultures that support transparency, and well-being." 
+  description="Dr John P. Mills is a psychologist, researcher, and strategic advisor working across education, sport, and mental health to foster meaningful, sustainable change. His work explores leadership, behaviour, and systems – particularly how to build cultures that support transparency, and well-being."
 >
+  <!-- Hero section -->
   <div class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0">
     <div class="flex flex-col items-center md:flex-row">
+
+      <!-- Left: text -->
       <div class="relative w-full md:w-1/2">
         <h1 class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white">
           Dr John P. Mills
         </h1>
         <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-         Psychologist, Researcher & Strategic Advisor.<br />
+          Psychologist, Researcher & Strategic Advisor.
         </p>
         <p class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">
-         Dr John P. Mills's work explores leadership, behaviour, and culture change – particularly how to foster systems and interventions that support transparency, and well-being.
-</p>
-
+          Dr John P. Mills's work explores leadership, behaviour, and culture change – particularly how to foster systems and interventions that support transparency, and well-being.
+        </p>
         <Button text="Read John's Bio" link="https://johnpmills.com/about/" />
       </div>
-                 <div class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0">
+
+      <!-- Right: photo -->
+      <div class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0">
         <div class="relative z-30 w-full px-10">
           <img
             src="/assets/images/JohnPMills_auditorium_web.jpg"
@@ -141,6 +88,10 @@ const featured = [
         </div>
       </div>
 
+    </div>
+  </div>
+  <!-- End hero section -->
+
   <Separator text="Featured Research" />
   <Thoughts items={featured} />
 
@@ -150,14 +101,12 @@ const featured = [
   <Separator text="Projects" />
   <Projects />
 
-
-
   <Separator text="Peer Endorsements" />
-  <div class="py-12 bg-neutral-50 dark:bg-neutral-900/30"> <!-- Added subtle background container -->
+  <div class="py-12 bg-neutral-50 dark:bg-neutral-900/30">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"> <!-- Responsive grid layout -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {quotes.map((t) => (
-          <div class="p-6 bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-neutral-100 dark:border-neutral-700 hover:shadow-md transition-shadow"> <!-- Refined card styling -->
+          <div class="p-6 bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-neutral-100 dark:border-neutral-700 hover:shadow-md transition-shadow">
             <p class="text-sm text-neutral-700 dark:text-neutral-300 italic mb-4">"{t.quote}"</p>
             <div class="border-t border-neutral-100 dark:border-neutral-700 pt-4">
               <p class="font-semibold text-neutral-900 dark:text-white">{t.name}</p>
